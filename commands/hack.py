@@ -1,25 +1,29 @@
 import asyncio
 from faker import Faker
 from telethon import events
+from utils.loading_animation import loading_animation
 
 fake = Faker()
 
 async def hack(event):
     try:
-        
         await event.edit("`🕵️‍♂️ Starting the hack...`")
-        await asyncio.sleep(2)
-        await event.edit("`📡 Connecting to target servers...`")
-        await asyncio.sleep(2)
-        await event.edit("`🔍 Performing port scanning...`")
-        await asyncio.sleep(2)
-        await event.edit("`🔓 Open port found! Exploit attempt...`")
-        await asyncio.sleep(3)
-        await event.edit("`💻 Logged in successfully! Extracting data...`")
-        await asyncio.sleep(3)
-        await event.edit("`📁 Compiling the extracted information...`")
-        await asyncio.sleep(2)
+        await loading_animation(event, "`🕵️‍♂️ Starting the hack...`", duration=2)
         
+        await event.edit("`📡 Connecting to target servers...`")
+        await loading_animation(event, "`📡 Connecting to target servers...`", duration=2)
+        
+        await event.edit("`🔍 Performing port scanning...`")
+        await loading_animation(event, "`🔍 Performing port scanning...`", duration=2)
+        
+        await event.edit("`🔓 Open port found! Exploit attempt...`")
+        await loading_animation(event, "`🔓 Open port found! Exploit attempt...`", duration=3)
+        
+        await event.edit("`💻 Logged in successfully! Extracting data...`")
+        await loading_animation(event, "`💻 Logged in successfully! Extracting data...`", duration=3)
+        
+        await event.edit("`📁 Compiling the extracted information...`")
+        await loading_animation(event, "`📁 Compiling the extracted information...`", duration=2)
         
         name = fake.first_name()
         surname = fake.last_name()
@@ -27,7 +31,6 @@ async def hack(event):
         address = fake.address()
         age = fake.random_int(min=18, max=90)
         email = fake.email()
-        
         
         info_message = (
             f"`First Name: {name}\n`"
