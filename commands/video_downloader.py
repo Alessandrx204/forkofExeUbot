@@ -10,7 +10,7 @@ async def download_video(event, url):
 
         ydl_opts = {
             'outtmpl': 'downloads/%(title)s.%(ext)s',
-            'format': 'best',
+            'format': 'bestvideo+bestaudio/best',
             'noplaylist': True,
             'cookiefile': cookies_path,
         }
