@@ -61,5 +61,5 @@
     "provide_url_to_shorten": "Veuillez fournir une URL à raccourcir.",
     "invalid_time_format": "Format de temps invalide. Utilisez Xs, Xm ou Xh.",
     "schedule_message_success": "Je publierai '{text}' toutes les {time_str} dans ce chat. Pour annuler, utilisez .cancsched",
-    "dm_only_command": "You can only use this command in a private chat."
+    "dm_only_command": "Tu ne peux utiliser cette commande que dans les messages privés"
 }
